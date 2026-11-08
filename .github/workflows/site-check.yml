@@ -1,0 +1,39 @@
+name: Build and browser review
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Install Playwright bundled Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Render every page and check all links
+        run: npm test
+      - name: Upload every page at phone and desktop sizes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-review
+          path: |
+            screenshots/
+            playwright-report/
+            test-results/
+          retention-days: 14
+      - name: Upload the static first build
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: dist/
+          retention-days: 14
