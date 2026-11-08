@@ -1,0 +1,6 @@
+artifacts
+screenshots
+playwright-report
+test-results
+node_modules
+.env*
