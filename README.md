@@ -24,4 +24,6 @@ No production publishing is authorised. No GitHub-to-Vercel automatic deployment
 
 The network and approval illustrations are original HTML/CSS examples, explicitly labelled, with no personal or client information. They are not screenshots of a running Tiamatrix app.
 
-No upstream license is asserted. The public product snapshot has no root LICENSE file at the audited commit. See PLAN.md.
+The product is licensed under [Apache-2.0](https://github.com/blackcode-ch/tmx-go-public/blob/main/LICENSE). Updated install, phone and feature copy follows tmx-go-fleet PR #44. Its public docs and license links await the public snapshot update. The official Living cell SVG is copied from terminal-matrix v2; the build reuses it in a 1200x630 PNG share card via resvg. No browser runs locally.
+
+When hosting is approved, set `SITE_URL` to the chosen HTTPS origin during build for absolute social-image URLs. CI artifacts use relative paths until that origin exists.

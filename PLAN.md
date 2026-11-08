@@ -54,3 +54,9 @@ Vercel's current documentation explicitly states that the first deployment is pr
 1. Can the maintainer publish/confirm the actual license? Apache is currently unverified.
 2. Which enabled public build and Windows/Linux/phone setup guide should we offer beyond the restricted trial?
 3. Can the owner confirm control of tiamatrix.com, and approve the reviewed site before any production launch?
+
+## Content correction, 8 November
+
+The following supersedes the earlier content audit and its first two questions: copy now follows tmx-go-fleet PR #44 (go-pubdocs-c/docs). P2P chats/files work between connected people with production P2P enabled; the default trial profile still forces external channels off. Automatic updates are forced off; manual signed updates require configured release trust. Current release binaries are headless; desktop installers come later. Install and phone sections link to the new public guides, and licensing reads Apache-2.0 with the public LICENSE link. Only temporary 404s for those three exact new destinations are allowed in CI until the public snapshot lands.
+
+Header, favicon and generated PNG share card use the official Living cell SVG from terminal-matrix v2. Browser review remains public CI only. No Vercel commands or deployments are part of this correction.
