@@ -3,5 +3,5 @@
   "private": true,
   "type": "module",
   "scripts": {"build": "node scripts/build.mjs", "test": "playwright test", "serve": "node scripts/serve.mjs"},
-  "devDependencies": {"@playwright/test": "1.56.1"}
+  "devDependencies": {"@playwright/test": "1.65.0"}
 }
