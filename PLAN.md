@@ -39,7 +39,15 @@ Queried local DNS, Google public DNS-over-HTTPS, and RDAP (`https://rdap.org/dom
 
 Existing Vercel CLI authentication succeeds. The account's accessible team lists four unrelated domains; no Tiamatrix domain is listed. This does not prove the domain is held elsewhere or owned by someone else.
 
-Free path: use the generated Vercel preview URL now. After explicit launch approval, request `tiamatrix-site.vercel.app` if available. Attach a custom domain later only after ownership is demonstrated; no purchase is authorised.
+Free path for review now: download the `static-site` and `browser-review` artifacts from public GitHub Actions. The Vercel project name `tiamatrix-site` is reserved, but it has no deployment. After explicit launch approval, its default `tiamatrix-site.vercel.app` address can be used. Attach a custom domain later only after ownership is demonstrated; no purchase is authorised.
+
+## Validation and hosting outcome
+
+Passing browser run: https://github.com/blackcode-ch/tiamatrix-site/actions/runs/42516728625 at commit `cb5a1fb`. All four pages rendered at 390×844 and 1440×900 in light and dark: 16 full-page screenshots, all visually reviewed. Internal and external links, runtime/console/network errors, overflow, 19px base size and theme control checks passed. Artifacts: `browser-review` and `static-site`. No local browser was opened, and no local node_modules directory was installed.
+
+On 8 November at approximately 19:48 UTC, after CI and visual review, the command `vercel deploy --target=preview --yes --scope andrea-edelmans-projects` unexpectedly returned `target: production` and assigned the default project domain. The newly created deployment was immediately removed with Vercel CLI. The project API subsequently showed empty targets and no deployments, with no Git integration; both the generated deployment URL and default domain returned HTTP 404. The lead was notified immediately. No further deploy was attempted.
+
+Vercel's current documentation explicitly states that the first deployment is production even when preview is requested, and deleting all deployments restores that first-deployment behavior: https://vercel.com/docs/deployments/environments#first-deployment. A preview-only first deployment cannot be honestly promised for this empty project. Further hosting work needs an approved route; do not retry the same command or create a production bootstrap to work around the restriction.
 
 ## Three questions for review
 

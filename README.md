@@ -12,7 +12,7 @@ Browser checks run **only in public GitHub Actions**, never on the workstation. 
 
 ## Publishing boundary
 
-No production publishing is authorised. No GitHub-to-Vercel automatic deployment integration is configured by this repository. Only an explicitly preview-targeted Vercel CLI deployment may be made using existing access. Andrea must approve production separately. No paid services or domain purchases.
+No production publishing is authorised. No GitHub-to-Vercel automatic deployment integration is configured. **Do not deploy this new Vercel project again:** Vercel forces a first deployment to production even with `--target=preview`. The first attempted preview was immediately removed after Vercel returned a production target. Both URLs returned 404 afterwards; no deployment remains. See PLAN.md for the incident and evidence. Andrea must decide the hosting route before another attempt. No domain purchase or plan upgrade was made.
 
 ## Files
 
